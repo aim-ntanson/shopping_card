@@ -11,9 +11,8 @@
 #include "../../domain/repository/ProductRepository.h"
 #include "../../domain/service/InventoryService.h"
 #include "../../domain/factory/OrderFactory.h"
-#include "OrderRepositoryFac"
 
-class OrderServiceImpl: public OrderService{
+class OrderServiceImpl : public OrderService{
 private:
     OrderRepository* orderRepository;
     ProductRepository* productRepository;
@@ -22,10 +21,9 @@ private:
 
 public:
     OrderServiceImpl(InventoryService* inventoryService) {
-        this->orderRepository = OrderRepositoryFactory.getOrderRepository();
-        this->productRepository = ProductRepositoryFactory::getProductRepository();
-        this->inventoryService = inventoryService;
-        this->orderFactory = &OrderFactory::getInstance();
+        orderRepository = OrderRepositoryFactory
+    }
+
 
 };
 

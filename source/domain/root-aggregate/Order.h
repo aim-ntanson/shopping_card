@@ -26,13 +26,14 @@ public:
     Order(const std::string& orderNumber, const std::string& customerId)
             : orderNumber(orderNumber), customer(Customer(customerId, orderNumber))
     {
+        id = 0;
         items = std::list<OrderItem>();
         totalAmount = 0;
         status = OrderStatus::NEW;
         createdAt = time(nullptr);
     }
 
-    long getId() {
+    long getId() const {
         return id;
     }
 
@@ -56,8 +57,8 @@ public:
         return status;
     }
 
-    void setStatus(OrderStatus status) {
-        this->status = status;
+    void setStatus(OrderStatus _status) {
+        this->status = _status;
     }
 
     void calculateTotalAmount();

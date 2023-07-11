@@ -2,7 +2,7 @@
 // Created by aimsern on 7/4/2023.
 //
 
-#include "InMemoryProductRepository.h"
+#include "../include/InMemoryProductRepository.h"
 
 Product* InMemoryProductRepository::getProductById(std::string productId) {
     for (const Product& product : products) {
