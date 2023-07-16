@@ -32,6 +32,8 @@ public:
         status = OrderStatus::NEW;
         createdAt = time(nullptr);
     }
+    // todo: implement overload "<<"
+    friend std::ostream& operator<<(std::ostream& out, Order* order);
 
     long getId() const {
         return id;
@@ -45,11 +47,11 @@ public:
         return items;
     }
 
-    double getTotalAmount() {
+    double getTotalAmount() const {
         return totalAmount;
     }
 
-    time_t getCreatedAt() {
+    time_t getCreatedAt() const {
         return createdAt;
     }
 

@@ -21,14 +21,7 @@ public:
         this->price = price;
     }
 
-    Product& operator=(const Product& other) {
-        if (this != &other) {
-            this->id = other.id;
-            this->name = other.name;
-            this->price = other.price;
-        }
-        return *this;
-    }
+    Product& operator=(const Product& other) = default;
 
     std::string getId() const {
         return id;

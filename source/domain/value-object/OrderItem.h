@@ -10,20 +10,20 @@
 
 class OrderItem {
 private:
-    const Product product;
+    const Product *product;
     int quantity;
 
 public:
-    OrderItem(const Product& product, int quantity) : product(product){
+    OrderItem(const Product *product, int quantity) {
         this->product = product;
         this->quantity = quantity;
     }
 
     Product getProduct() {
-        return product;
+        return *product;
     }
 
-    int getQuantity() {
+    int getQuantity() const {
         return quantity;
     }
 
@@ -36,7 +36,7 @@ public:
     }
 
     double getTotalPrice() {
-        return quantity * product.getPrice();
+        return quantity * product->getPrice();
     }
 
 };

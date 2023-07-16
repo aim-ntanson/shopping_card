@@ -3,6 +3,16 @@
 //
 
 #include "Order.h"
+
+std::ostream &operator<<(std::ostream &out, Order *order) {
+    out << "Customer's name: " << (order->getCustomer()).getName();
+    out << "(" << order->getId() << ")" << std::endl;
+    out << "List order: " << order->toString() << std::endl;
+    out << "Order status: " << order->getStatus() << std::endl;
+    out << "Time created order: " << order->getCreatedAt() << std::endl;
+    return out;
+}
+
 void Order::calculateTotalAmount() {
     double total = 0;
     for (OrderItem item : items) {
@@ -12,13 +22,14 @@ void Order::calculateTotalAmount() {
 }
 
 void Order::addItem(OrderItem item) {
+    //todo
     items.push_back(item);
     calculateTotalAmount();
 }
 
 void Order::removeItem(OrderItem item) {
+    //todo
     items.remove(item);
-//        items.erase(std::remove(items.begin(), items.end(), item), items.end());
     calculateTotalAmount();
 }
 
@@ -30,3 +41,4 @@ std::string Order::toString() {
     }
     return str.str();
 }
+

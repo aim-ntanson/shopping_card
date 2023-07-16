@@ -11,7 +11,7 @@
 class OrderRepository {
 public:
     virtual void save(Order order) = 0;
-    virtual Order * getOrderById(long id) = 0;
+    virtual Order* getOrderById(long id) = 0;
     virtual std::list<Order> getAllOrders() = 0;
 };
 

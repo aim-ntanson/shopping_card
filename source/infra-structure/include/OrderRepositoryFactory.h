@@ -10,19 +10,13 @@
 
 class OrderRepositoryFactory {
 private:
-    static OrderRepository* orderRepository;
+    static OrderRepository *orderRepository;
 
 public:
     OrderRepositoryFactory() {
-        orderRepository = new OrderRepository;
+        orderRepository = nullptr;
     }
-
-    static OrderRepository  getOrderRepository() {
-        if (orderRepository == nullptr)
-            orderRepository = new InMemoryOrderRepository();
-
-        return orderRepository;
-    }
+    static OrderRepository*  getOrderRepository();
 };
 
 

@@ -17,15 +17,17 @@ private:
     }
 
 public:
-    static OrderFactory& getInstance() {
-        static OrderFactory instance;
+    static OrderFactory* getInstance() {
+        static OrderFactory *instance;
         return instance;
     }
 
     static Order createOrder(const std::string& customerId) {
         std::string orderNumber = generateOrderNumber();
-        return Order(orderNumber, customerId);
+        auto order = new Order(orderNumber, customerId);
+        return *order;
     }
+
 };
 
 
