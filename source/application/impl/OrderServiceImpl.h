@@ -24,6 +24,8 @@ public:
     OrderServiceImpl(InventoryService* inventoryService);
     Order createOrder(std::string customerId) override;
     void addItemToOrder(Order order, std::string productId, int quantity) override;
+    void removeItemFromOrder(Order order, OrderItem item);
+    std::list<Order> getOrdersByCustomer(std::string customerId);
 
 };
 

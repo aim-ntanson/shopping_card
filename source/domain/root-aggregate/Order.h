@@ -32,8 +32,8 @@ public:
         status = OrderStatus::NEW;
         createdAt = time(nullptr);
     }
-    // todo: implement overload "<<"
-    friend std::ostream& operator<<(std::ostream& out, Order* order);
+
+    friend std::ostream& operator<<(std::ostream& out, Order order);
 
     long getId() const {
         return id;

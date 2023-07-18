@@ -11,7 +11,6 @@ Product* InMemoryProductRepository::getProductById(std::string productId) {
         }
     }
     return nullptr;
-//    return Product(__cxx11::basic_string(), __cxx11::basic_string(), 0);
 }
 
 void InMemoryProductRepository::saveProduct(Product product) {

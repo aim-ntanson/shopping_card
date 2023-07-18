@@ -4,12 +4,12 @@
 
 #include "Order.h"
 
-std::ostream &operator<<(std::ostream &out, Order *order) {
-    out << "Customer's name: " << (order->getCustomer()).getName();
-    out << "(" << order->getId() << ")" << std::endl;
-    out << "List order: " << order->toString() << std::endl;
-    out << "Order status: " << order->getStatus() << std::endl;
-    out << "Time created order: " << order->getCreatedAt() << std::endl;
+std::ostream &operator<<(std::ostream &out, Order order) {
+    out << "Customer's name: " << (order.getCustomer()).getName();
+    out << "(" << order.getId() << ")" << std::endl;
+    out << "List order: " << order.toString() << std::endl;
+    out << "Order status: " << order.getStatus() << std::endl;
+    out << "Time created order: " << order.getCreatedAt() << std::endl;
     return out;
 }
 

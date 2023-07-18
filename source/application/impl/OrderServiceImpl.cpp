@@ -28,3 +28,11 @@ void OrderServiceImpl::addItemToOrder(Order order, std::string productId, int qu
 
 }
 
+void OrderServiceImpl::removeItemFromOrder(Order order, OrderItem item) {
+
+}
+
+std::list<Order> OrderServiceImpl::getOrdersByCustomer(std::string customerId) {
+    return std::list<Order>();
+}
+

@@ -8,7 +8,7 @@
 
 // todo: make constructor
 OrderConsoleUI::OrderConsoleUI() {
-    this->orderService = new OrderServiceImpl();
+    this->orderService = new OrderServiceImpl(new InventoryService());
     this->productService = new ProductServiceImpl();
 
     productService->saveProduct(Product("1", "Tao", 10.0));
@@ -114,9 +114,7 @@ void OrderConsoleUI::viewOrdersByCustomer() {
         std::cout << "Orders for customer " << customerId << ":" << std::endl;
         for (const auto& order : orders) {
             std::cout << order << std::endl;
-            // wait for implement overload <<
+
         }
     }
-
 }
-
