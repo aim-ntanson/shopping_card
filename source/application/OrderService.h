@@ -14,7 +14,7 @@ public:
     virtual Order createOrder(std::string customerId) = 0;
     virtual void removeItemFromOrder(Order order, OrderItem item) = 0;
     virtual void addItemToOrder(Order order, std::string productId, int quantity) = 0;
-    virtual std::list<Order> getOrdersByCustomer(std::string customerId);
+    virtual std::list<Order> getOrdersByCustomer(std::string customerId) = 0;
 };
 
 

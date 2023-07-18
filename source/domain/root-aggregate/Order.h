@@ -26,13 +26,16 @@ public:
     Order(const std::string& orderNumber, const std::string& customerId)
             : orderNumber(orderNumber), customer(Customer(customerId, orderNumber))
     {
+        id = 0;
         items = std::list<OrderItem>();
         totalAmount = 0;
         status = OrderStatus::NEW;
         createdAt = time(nullptr);
     }
+    // todo: implement overload "<<"
+    friend std::ostream& operator<<(std::ostream& out, Order* order);
 
-    long getId() {
+    long getId() const {
         return id;
     }
 
@@ -44,11 +47,11 @@ public:
         return items;
     }
 
-    double getTotalAmount() {
+    double getTotalAmount() const {
         return totalAmount;
     }
 
-    time_t getCreatedAt() {
+    time_t getCreatedAt() const {
         return createdAt;
     }
 
@@ -56,8 +59,8 @@ public:
         return status;
     }
 
-    void setStatus(OrderStatus status) {
-        this->status = status;
+    void setStatus(OrderStatus _status) {
+        this->status = _status;
     }
 
     void calculateTotalAmount();

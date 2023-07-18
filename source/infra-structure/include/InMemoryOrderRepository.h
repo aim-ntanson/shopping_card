@@ -20,5 +20,4 @@ public:
     std::list<Order> getAllOrders() override;
 };
 
-
 #endif //SHOPPING_CARD_INMEMORYORDERREPOSITORY_H

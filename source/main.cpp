@@ -1,7 +1,7 @@
 
 #include "interface/OrderConsoleUI.h"
 
-int main(void) {
+int main() {
     OrderConsoleUI interface;
     interface.run();
 

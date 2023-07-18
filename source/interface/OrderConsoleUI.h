@@ -12,19 +12,18 @@
 #include "../application/impl/OrderServiceImpl.h"
 
 class OrderConsoleUI {
-public:
-    OrderConsoleUI();
-//    Scanner scanner = new Scanner(System.in);
-
-    void run();
-    void viewProducts();
+private:
+    OrderService    *orderService;
+    ProductService  *productService;
     void createOrder();
 
-private:
-    ProductService productService;
-    OrderService orderService;
 
+public:
+    OrderConsoleUI();
+    void run();
+    void viewProducts();
+    std::string getCustomerIdFromUser();
+    void viewOrdersByCustomer();
 };
-
 
 #endif //SHOPPING_CARD_ORDERCONSOLEUI_H

@@ -7,8 +7,8 @@
 
 
 #include <list>
-#include "../domain/entity/Product.h"
-#include "../domain/repository/ProductRepository.h"
+#include "../../domain/entity/Product.h"
+#include "../../domain/repository/ProductRepository.h"
 
 class InMemoryProductRepository : public ProductRepository{
 private:

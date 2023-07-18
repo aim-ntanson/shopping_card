@@ -5,27 +5,25 @@
 #ifndef SHOPPING_CARD_ORDERSERVICEIMPL_H
 #define SHOPPING_CARD_ORDERSERVICEIMPL_H
 
-
 #include "../OrderService.h"
 #include "../../domain/repository/OrderRepository.h"
 #include "../../domain/repository/ProductRepository.h"
 #include "../../domain/service/InventoryService.h"
 #include "../../domain/factory/OrderFactory.h"
-#include "OrderRepositoryFac"
+#include "../../infra-structure/include/OrderRepositoryFactory.h"
+#include "../../infra-structure/include/ProductRepositoryFactory.h"
 
-class OrderServiceImpl: public OrderService{
+class OrderServiceImpl : public OrderService {
 private:
-    OrderRepository* orderRepository;
-    ProductRepository* productRepository;
-    InventoryService* inventoryService;
-    OrderFactory* orderFactory;
+    OrderRepository *orderRepository;
+    ProductRepository *productRepository;
+    InventoryService *inventoryService;
+    OrderFactory *orderFactory;
 
 public:
-    OrderServiceImpl(InventoryService* inventoryService) {
-        this->orderRepository = OrderRepositoryFactory.getOrderRepository();
-        this->productRepository = ProductRepositoryFactory::getProductRepository();
-        this->inventoryService = inventoryService;
-        this->orderFactory = &OrderFactory::getInstance();
+    OrderServiceImpl(InventoryService* inventoryService);
+    Order createOrder(std::string customerId) override;
+    void addItemToOrder(Order order, std::string productId, int quantity) override;
 
 };
 
