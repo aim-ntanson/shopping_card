@@ -22,6 +22,9 @@ public:
     }
 
     Product& operator=(const Product& other) = default;
+    bool operator==(const Product& other) const {
+        return this->id == other.id;
+    }
 
     std::string getId() const {
         return id;

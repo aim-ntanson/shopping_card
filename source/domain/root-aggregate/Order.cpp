@@ -22,13 +22,15 @@ void Order::calculateTotalAmount() {
 }
 
 void Order::addItem(OrderItem item) {
-    //todo
     items.push_back(item);
     calculateTotalAmount();
 }
 
+/**
+ * Remove specific item from a list items
+ * @param item
+ */
 void Order::removeItem(OrderItem item) {
-    //todo
     items.remove(item);
     calculateTotalAmount();
 }

@@ -13,11 +13,11 @@ Product* InMemoryProductRepository::getProductById(std::string productId) {
     return nullptr;
 }
 
-void InMemoryProductRepository::saveProduct(Product product) {
+void InMemoryProductRepository::saveProduct(Product& product) {
     products.push_back(product);
 }
 
-void InMemoryProductRepository::updateProduct(Product product) {
+void InMemoryProductRepository::updateProduct(Product& product) {
     for (Product& p : products)
     {
         if (p.getId() == product.getId())
@@ -28,6 +28,13 @@ void InMemoryProductRepository::updateProduct(Product product) {
     }
 }
 
-void InMemoryProductRepository::deleteProduct(Product product) {
-    products.erase(std::remove(products.begin(), products.end(), product), products.end());
+/**
+ *
+ * @param product
+ * The method remove() use operator ==,
+ * lead to need implement overloading the equality operator (==) in class Product
+ */
+void InMemoryProductRepository::deleteProduct(Product& product) {
+    products.remove(product);
+
 }

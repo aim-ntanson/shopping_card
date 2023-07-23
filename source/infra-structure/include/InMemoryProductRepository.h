@@ -25,9 +25,9 @@ public:
     }
 
     Product* getProductById(std::string productId) override;
-    void saveProduct(Product product) override;
-    void updateProduct(Product product) override;
-    void deleteProduct(Product product) override;
+    void saveProduct(Product& product) override;
+    void updateProduct(Product& product) override;
+    void deleteProduct(Product& product) override;
 };
 
 

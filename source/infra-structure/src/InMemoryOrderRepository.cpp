@@ -16,9 +16,9 @@ Order* InMemoryOrderRepository::getOrderById(long id) {
     return nullptr;
 }
 
-std::list<Order> InMemoryOrderRepository::getAllOrders() {
-    std::list<Order> allOrders;
-    for (auto& pair : orders) {
+std::list<Order*> InMemoryOrderRepository::getAllOrders() {
+    std::list<Order*> allOrders;
+    for (const auto& pair : orders) {
         allOrders.push_back(pair.second);
     }
     return allOrders;

@@ -19,6 +19,10 @@ public:
         this->quantity = quantity;
     }
 
+    bool operator==(const OrderItem& other) const {
+        return (this->product)->getId() == (other.product)->getId();
+    }
+
     Product getProduct() {
         return *product;
     }
